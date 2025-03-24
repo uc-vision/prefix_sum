@@ -19,8 +19,12 @@ setup(
   name="prefix_sum",
   author="Matt Dean, Lixin Xue",
   description="Parallel Prefix Sum on CUDA with Pytorch API",
+  version="0.1.0",
   ext_modules=[
     CUDAExtension('prefix_sum', ['prefix_sum.cu'], extra_compile_args=extra_compile_args)
+  ],
+  install_requires=[
+    'torch',
   ],
   cmdclass={"build_ext": BuildExtension},
 )
